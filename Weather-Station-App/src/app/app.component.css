@@ -1,0 +1,8 @@
+.display-temp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 200pt;
+    margin-left: -350px;
+    margin-top: -150px;
+}

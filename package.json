@@ -1,0 +1,14 @@
+{
+  "name": "Weather Station",
+  "version": "1.0.0",
+  "description": "Display information regarding the local weather",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "BEM",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
