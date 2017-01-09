@@ -5,4 +5,12 @@
     font-size: 200pt;
     margin-left: -350px;
     margin-top: -150px;
+    height: 100%;
+    width: 100%;
+}
+.hot {
+    background: rgba(255, 0, 0, 1);
+}
+.cold {
+    background: rgba(0, 0, 255, 1);
 }
