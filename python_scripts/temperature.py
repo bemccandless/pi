@@ -1,5 +1,6 @@
 """Return the temperature"""
 
+import sys
 import time
 import serial
 
@@ -10,5 +11,6 @@ while not SER:
 SER.write('getTemp')
 TEMP = SER.readline()
 
-SER.close()
 print TEMP
+sys.stdout.flush()
+
