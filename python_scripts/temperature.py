@@ -1,6 +1,14 @@
-import serial;
+"""Return the temperature"""
 
-ser = serial.Serial('/dev/ttyACM0')
-temp = ser.readline()
+import time
+import serial
 
-print(temp)
+SER = serial.Serial('/dev/ttyACM0', 9600)
+while not SER:
+    time.sleep(1)
+
+SER.write('getTemp')
+TEMP = SER.readline()
+
+SER.close()
+print TEMP
