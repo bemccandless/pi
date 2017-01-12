@@ -13,6 +13,9 @@ app.listen(3000, function() {
 
 // Variables
 var currentTemp;
+var lowTemp;
+var highTemp;
+var startDate = new Date();
 
 // Functions
 var init = function() {
@@ -30,6 +33,12 @@ var getTemperature = function() {
         }
         this.currentTemp = stdout.toString().trim();
     });
+    if (this.lowTemp === undefined || this.currentTemp < this.lowTemp) {
+        this.lowTemp = this.currentTemp;
+    }
+    if (this.highTemp === undefined || this.currentTemp > this.highTemp) {
+        this.highTemp = this.currentTemp;
+    }
 };
 
 // Main
@@ -38,7 +47,9 @@ init();
 // API
 app.get('/temperature', function(req, res) {
     res.status(200).send({ 
-        temperature: this.currentTemp
+        current: this.currentTemp,
+        low: this.lowTemp,
+        high: this.highTemp
     });
 });
 

@@ -10,7 +10,7 @@ import { Temperature } from './temperature';
 })
 export class AppComponent implements OnInit {
     private temperatureService: TemperatureService;
-    private temperature: number;
+    private temperature: Temperature;
 
     constructor(temperatureService: TemperatureService) {
         this.temperatureService = temperatureService;
@@ -25,6 +25,6 @@ export class AppComponent implements OnInit {
 
     private getTemp() {
         this.temperatureService.getTemperature()
-            .subscribe(temperature => this.temperature = temperature.temperature);
+            .subscribe(temperature => this.temperature = temperature);
     }
 }

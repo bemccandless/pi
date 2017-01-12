@@ -5,11 +5,12 @@ import time
 import serial
 
 SER = serial.Serial('/dev/ttyACM0', 9600)
-while not SER:
-    time.sleep(1)
+time.sleep(2)
 
 SER.write('getTemp')
+time.sleep(1)
 TEMP = SER.readline()
+time.sleep(1)
 
 print TEMP
 sys.stdout.flush()

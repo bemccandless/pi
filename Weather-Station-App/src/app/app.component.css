@@ -6,6 +6,10 @@
     left: 50%;
     font-size: 170pt;
 }
+.stats {
+    font-size: 20pt;
+    float: right;
+}
 .hot {
     background: rgba(255, 0, 0, 1);
 }

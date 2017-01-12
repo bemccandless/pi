@@ -1,5 +1,15 @@
-<div class="display-temp">
-    <div *ngIf="temperature">
-        {{temperature}} ºF
+<div>
+    <div *ngIf="temperature && temperature.current">
+        <div class="stats">
+            <div>
+                Low: {{temperature.low}} ºF
+            </div>
+            <div>
+                High: {{temperature.high}} ºF
+            </div>
+        </div>
+        <div class="display-temp">
+            {{temperature.current}} ºF
+        </div>
     </div>
 </div>

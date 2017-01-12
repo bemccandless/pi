@@ -1,11 +1,23 @@
 export class Temperature {
-    private _temperature: number;
+    private _current: number;
+    private _low: number;
+    private _high: number;
 
-    constructor(temperature: number) {
-        this._temperature = temperature;
+    constructor(current: number, low: number, high: number) {
+        this._current = current;
+        this._low = low;
+        this._high = high;
      }
 
-     get temperature(): number {
-         return this.temperature;
+     get current(): number {
+         return this._current;
+     }
+     
+     get low(): number {
+         return this._low;
+     }
+     
+     get high(): number {
+         return this._high;
      }
 }
