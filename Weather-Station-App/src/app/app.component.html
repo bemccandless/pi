@@ -1,15 +1,13 @@
-<div>
-    <div *ngIf="temperature && temperature.current">
-        <div class="stats">
-            <div>
-                Low: {{temperature.low}} ºF
-            </div>
-            <div>
-                High: {{temperature.high}} ºF
-            </div>
+<div [style.background-color]="backdropColor" class="backdrop" *ngIf="temperature && temperature.current">
+    <div class="stats">
+        <div>
+            Low: {{temperature.low}} ºF
         </div>
-        <div class="display-temp">
-            {{temperature.current}} ºF
+        <div>
+            High: {{temperature.high}} ºF
         </div>
+    </div>
+    <div class="display-temp">
+        {{temperature.current}} ºF
     </div>
 </div>
