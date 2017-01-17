@@ -41,6 +41,6 @@ export class AppComponent implements OnInit {
             return "rgba(0, 0, 255, " + ((median - this.temperature.low) / 10) / (median - this.temperature.current) + ")";
         }
 
-        return "comfortable"
+        return "rgb(255, 255, 255)"
     }
 }
