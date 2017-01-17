@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
     }
 
     private getBackdropColor() {
-        console.log("High: " + this.temperature.high + " | Low: " + this.temperature.low);
+        console.log("High: " + this.temperature.high + " | Low: " + this.temperature.low + " | Sum: " + (this.temperature.high + this.temperature.low));
         var median: number = (this.temperature.high + this.temperature.low) / 2;
         console.log("Median: " + median);
 
