@@ -32,8 +32,10 @@ export class AppComponent implements OnInit {
     }
 
     private getBackdropColor() {
+        console.log("High: " + this.temperature.high + " | Low: " + this.temperature.low);
         var median: number = (this.temperature.high + this.temperature.low) / 2;
         console.log("Median: " + median);
+
         if (this.temperature.current > median) {
             return "rgba(255, 0, 0, " + ((this.temperature.high - median) / 10) / (this.temperature.current - median) + ")";
         }

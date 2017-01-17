@@ -27,22 +27,19 @@ var init = function() {
 
 var temperatureFileLocation = './python_scripts/temperature.py';
 var getTemperature = function() {
-    // exec('python ' + temperatureFileLocation, function(error, stdout, stderr) {
-    //     if (error !== null) {
-    //         console.log('exec error: ' + error);
-    //     }
-    //     this.currentTemp = stdout.toString().trim();
-        
-    //     if (this.lowTemp === undefined || this.currentTemp < this.lowTemp) {
-    //     this.lowTemp = this.currentTemp;
-    //     }
-    //     if (this.highTemp === undefined || this.currentTemp > this.highTemp) {
-    //         this.highTemp = this.currentTemp;
-    //     }
-    // });
-    this.currentTemp = 86;
-    this.highTemp = 102;
-    this.lowTemp = 50;
+    exec('python ' + temperatureFileLocation, function(error, stdout, stderr) {
+        if (error !== null) {
+            console.log('exec error: ' + error);
+        }
+        this.currentTemp = stdout.toString().trim();
+     
+        if (this.lowTemp === undefined || this.currentTemp < this.lowTemp) {
+            this.lowTemp = this.currentTemp;
+        }
+        if (this.highTemp === undefined || this.currentTemp > this.highTemp) {
+            this.highTemp = this.currentTemp;
+        }
+    });
 };
 
 // Main
