@@ -21,14 +21,16 @@ export class AppComponent implements OnInit {
         this.getTemp();
         setInterval(() => {
             this.getTemp(); 
-            this.backdropColor = this.getBackdropColor();
             console.log("Backdrop: " + this.backdropColor);
         }, 30000);
     }
 
     private getTemp() {
         this.temperatureService.getTemperature()
-            .subscribe(temperature => this.temperature = temperature);
+            .subscribe(temperature => {
+                this.temperature = temperature; 
+                this.backdropColor = this.getBackdropColor();
+            });
     }
 
     private getBackdropColor() {
@@ -40,7 +42,7 @@ export class AppComponent implements OnInit {
             return "rgba(255, 0, 0, " + this.getPercentage() + ")";
         }
         if (this.temperature.current < median) {
-            return "rgba(0, 0, 255, " + (1 - this.getPercentage())+ ")";
+            return "rgba(0, 0, 255, " + (1 - this.getPercentage()) + ")";
         }
 
         return "rgb(0, 0, 0)"
