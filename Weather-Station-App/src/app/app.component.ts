@@ -36,13 +36,17 @@ export class AppComponent implements OnInit {
         var median: number = (this.temperature.high + this.temperature.low) / 2;
         console.log("Median: " + median);
 
-        if (this.temperature.current > median) {
-            return "rgba(255, 0, 0, " + ((this.temperature.high - median) / 10) / (this.temperature.current - median) + ")";
+        if (this.temperature.current > median) {;
+            return "rgba(255, 0, 0, " + this.getPercentage() + ")";
         }
         if (this.temperature.current < median) {
-            return "rgba(0, 0, 255, " + ((median - this.temperature.low) / 10) / (median - this.temperature.current) + ")";
+            return "rgba(0, 0, 255, " + (1 - this.getPercentage())+ ")";
         }
 
-        return "rgb(255, 255, 255)"
+        return "rgb(0, 0, 0)"
+    }
+
+    private getPercentage() {
+        return ((this.temperature.current - this.temperature.low) / (this.temperature.high - this.temperature.low));
     }
 }
