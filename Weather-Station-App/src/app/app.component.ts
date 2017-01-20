@@ -11,7 +11,7 @@ import { Temperature } from './temperature';
 export class AppComponent implements OnInit {
     private temperatureService: TemperatureService;
     private temperature: Temperature;
-    private backdropColor: String = "comfortable";
+    private backdropColor;
 
     constructor(temperatureService: TemperatureService) {
         this.temperatureService = temperatureService;
