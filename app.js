@@ -15,7 +15,6 @@ app.listen(3000, function() {
 var currentTemp;
 var lowTemp;
 var highTemp;
-var startDate = new Date();
 
 // Functions
 var init = function() {
@@ -31,14 +30,14 @@ var getTemperature = function() {
         if (error !== null) {
             console.log('exec error: ' + error);
         }
-        this.currentTemp = stdout.toString().trim();
+        this.currentTemp = parseInt(stdout.toString().trim());
+            if (this.lowTemp === undefined || this.currentTemp < this.lowTemp) {
+            this.lowTemp = this.currentTemp;
+        }
+        if (this.highTemp === undefined || this.currentTemp > this.highTemp) {
+            this.highTemp = this.currentTemp;
+        }
     });
-    if (this.lowTemp === undefined || this.currentTemp < this.lowTemp) {
-        this.lowTemp = this.currentTemp;
-    }
-    if (this.highTemp === undefined || this.currentTemp > this.highTemp) {
-        this.highTemp = this.currentTemp;
-    }
 };
 
 // Main

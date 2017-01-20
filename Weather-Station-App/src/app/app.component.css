@@ -10,9 +10,9 @@
     font-size: 20pt;
     float: right;
 }
-.hot {
-    background: rgba(255, 0, 0, 1);
-}
-.cold {
-    background: rgba(0, 0, 255, 1);
+.backdrop {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    margin: -8px -8px;
 }
